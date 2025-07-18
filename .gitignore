@@ -1,0 +1,50 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Database configuration (create a template instead)
+# db_Config/config.php
+
+# Uploaded files (these should be backed up separately)
+Images/PaymentSlips/*
+Images/PrescriptionMessage/*
+Images/PrescriptionOrders/*
+Images/Profile_Pics/*
+
+# Keep directories but ignore contents
+!Images/PaymentSlips/.gitkeep
+!Images/PrescriptionMessage/.gitkeep
+!Images/PrescriptionOrders/.gitkeep
+!Images/Profile_Pics/.gitkeep
+
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+error_log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Backup files
+*.bak
+*.backup
+
+# PHP specific
+composer.phar
+vendor/
+*.cache
+
+# Node modules (if you add any)
+node_modules/
+npm-debug.log*
+
+# Production files that shouldn't be in repo
+/public/uploads/

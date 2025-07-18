@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=pharmacy_user
+      - DB_PASS=pharmacy_password
+      - DB_NAME=PharmacyX_DB
+    volumes:
+      - ./Images/PaymentSlips:/var/www/html/Images/PaymentSlips
+      - ./Images/PrescriptionMessage:/var/www/html/Images/PrescriptionMessage
+      - ./Images/PrescriptionOrders:/var/www/html/Images/PrescriptionOrders
+      - ./Images/Profile_Pics:/var/www/html/Images/Profile_Pics
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: PharmacyX_DB
+      MYSQL_USER: pharmacy_user
+      MYSQL_PASSWORD: pharmacy_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./Database/PharmacyX_DB.sql:/docker-entrypoint-initdb.d/init.sql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: pharmacy_user
+      PMA_PASSWORD: pharmacy_password
+    depends_on:
+      - db
+
+volumes:
+  db_data:

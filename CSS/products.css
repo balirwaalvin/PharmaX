@@ -1,0 +1,161 @@
+/*  Sankalpa M M G H C 
+    IT23538832 */
+
+.main-image-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-heading{
+  color: #464646;
+  font-size: 55px;
+  font-weight: 500;
+  z-index: 1;
+  width: 100%;
+  margin-top: 240px;
+  margin-left: 45px;
+}
+
+.main-heading-button{
+  padding: 20px 30px 20px 30px;
+  margin-top: 40px;
+  border-style: solid;
+  border-radius: 50px;
+  background-color: #fff ;
+  color: #0098DA;
+  border-color: #0098DA;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-left: 45px;
+}
+
+.main-heading-button:hover{
+background-color: #0098DA;
+color: #fff;
+}
+
+
+
+#main-image{
+  height: 820px;
+  width: 1000px;
+  object-fit: contain;
+  object-position: right;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: fadeIn 1s forwards;
+}
+
+.main-image:active{
+  opacity: 1;
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+
+.products-heading-container{
+  display: flex;
+  justify-content: center;
+}
+
+.product-heading{
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  color: #464646;
+}
+
+.product-content-container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 25px;
+}
+
+.products-container{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 300px;
+  padding: 15px;
+  margin: 20px;
+  transition: .4s;
+}
+
+.products-container:hover
+{
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: translate(0px, -8px);
+}
+
+.product-image-container{
+  margin-bottom: 12px;
+  padding: 8px;
+}
+
+.item-image{
+  width: 200px;
+  height: 200px;
+}
+
+.item-details{
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name{
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.product-discription{
+  text-justify: inter-word;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.item-price{
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.item-buynow-button{
+  padding: 8px 12px 8px 12px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: #0098DA;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.item-buynow-button:hover{
+  background-color: #0079B8;
+}
+
